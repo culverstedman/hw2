@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema[8.1].define(version: 2026_02_10_043710) do
   create_table "actors", force: :cascade do |t|
-    t.integer "actor_id"
     t.string "actor_name"
+    t.integer "agent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
