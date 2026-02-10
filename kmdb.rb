@@ -296,9 +296,7 @@ movies = Movie.all
 
 for movie in movies
   studio = Studio.find_by({ "id" => movie["studio_id"] })
-
-  puts movie["title"].ljust(22) + movie["year_released"].to_s.ljust(15) + movie["mpaa_rating"].ljust(7) + studio["studio_name"]
-
+  puts movie["title"].ljust(22) + movie["year_released"].to_s.ljust(14) + movie["mpaa_rating"].ljust(6) + studio["studio_name"]
 end
 
 # Prints a header for the cast output
@@ -309,6 +307,16 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+roles = Role.all
+
+for role in roles
+  movie = Movie.find_by({ "id" => role["movie_id"] })
+  actor = Actor.find_by({ "id" => role["actor_id"] })
+
+  puts movie["title"].ljust(22) + actor["actor_name"].ljust(22) + role["character_name"]
+end
+
+
 
 # Prints a header for the agent's list of represented actors output
 puts ""
