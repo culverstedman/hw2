@@ -86,13 +86,14 @@ Agent.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
-# Culver comment --> This step is executed in the terminal
+# Culver comments --> These steps are mostly executed in the terminal
 # rails generate model Role
 # rails generate model Actor
 # rails generate model Movie
 # rails generate model Studio
 # rails generate model Agent
-# after creating these, I went and added the table column headers to the new files created in db/migrate
+# after creating these, I went and added the relevant column headers that match our domain header to the new files created in db/migrate
+# after adding those, in terminal I executed the table migration with "rails db:migrate"
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
