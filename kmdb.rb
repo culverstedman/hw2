@@ -313,9 +313,8 @@ for role in roles
   movie = Movie.find_by({ "id" => role["movie_id"] })
   actor = Actor.find_by({ "id" => role["actor_id"] })
 
-  puts movie["title"].ljust(22) + actor["actor_name"].ljust(22) + role["character_name"]
+  puts movie["title"].ljust(23) + actor["actor_name"].ljust(23) + role["character_name"]
 end
-
 
 
 # Prints a header for the agent's list of represented actors output
@@ -326,3 +325,10 @@ puts ""
 
 # Query the actor data and loop through the results to display the agent's list of represented actors output.
 # TODO!
+actors = Actor.all
+
+for actor in actors
+  if actor["agent_id"] != nil
+    puts actor["actor_name"]
+  end
+end
